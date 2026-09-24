@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventario · Tecno High</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Mantiene la misma protección de sesión que ya usas en el taller
+    if (!localStorage.getItem('tecnoHighLoggedIn')) {
+      window.location.replace('sesion.html');
+    }
+  </script>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Inventario de Almacén</h1>
+      <p>Control y registro de piezas, refacciones y accesorios de Tecno High.</p>
+      <a href="index.html" class="hero-button">Volver al Inicio</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel panel--intro">
+      <div class="panel-grid" style="grid-template-columns: 1fr; gap: 40px; max-width: 650px; margin: 0 auto;">
+        <div>
+          <h2>Registrar Nuevo Producto</h2>
+          <p>Introduce los datos de la refacción o accesorio que va ingresando al taller para actualizar el stock.</p>
+        </div>
+        <div>
+          <form action="procesar_inventario.php" method="post" class="appointment-form">
+            <label for="nombre_producto">Nombre de la pieza / producto</label>
+            <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Ej: Pantalla iPhone 11" required>
+
+            <label for="categoria">Categoría</label>
+            <select id="categoria" name="categoria" required>
+              <option value="" disabled selected>Selecciona una categoría...</option>
+              <option value="Pantallas / Cristales">Pantallas / Cristales</option>
+              <option value="Baterías">Baterías</option>
+              <option value="Puertos de Carga">Puertos de Carga</option>
+              <option value="Componentes Internos">Componentes Internos (Cámaras, Flexores)</option>
+              <option value="Accesorios / Herramientas">Accesorios / Herramientas</option>
+            </select>
+
+            <label for="cantidad">Cantidad en Stock</label>
+            <input type="number" id="cantidad" name="cantidad" min="1" placeholder="Ej: 5" required>
+
+            <label for="precio">Precio Unitario ($)</label>
+            <input type="number" id="precio" name="precio" step="0.01" min="0" placeholder="Ej: 850.00" required>
+
+            <button class="hero-button" type="submit" style="margin-top: 20px; width: 100%; border: none; cursor: pointer;">Guardar en Almacén</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

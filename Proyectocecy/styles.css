@@ -1,0 +1,555 @@
+/* ==========================================================================
+   ESTILOS ULTRA-MAXIMALISTAS - PALETA CYBER-BLUE TOTAL
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@400;700&family=Rubik+Glitch&display=swap');
+
+:root {
+  --blue-black: #020210;
+  --deep-space: #050c24;
+  --cyber-blue: #00f0ff;
+  --neon-matrix: #0044ff;
+  --laser-cyan: #00ffcc;
+  --royal-glare: #1a0066;
+  --text-phosphor: #d8f8ff;
+  
+  /* FONDO DE PANTALLA 1: Rejilla Cuántica y Líneas de Código Emuladas */
+  --bg-maximalist: 
+    linear-gradient(rgba(0, 240, 255, 0.05) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.05) 2px, transparent 2px),
+    linear-gradient(rgba(0, 68, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 68, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, var(--royal-glare) 0%, var(--blue-black) 100%);
+}
+
+/* ==========================================================================
+   RESET & ANIMACIONES
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 3px 3px 0px var(--neon-matrix), -3px -3px 0px var(--cyber-blue); }
+  50% { text-shadow: -5px 2px 0px var(--neon-matrix), 4px -2px 0px var(--laser-cyan); }
+  100% { text-shadow: 3px 3px 0px var(--neon-matrix), -3px -3px 0px var(--cyber-blue); }
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: var(--cyber-blue); box-shadow: 0 0 10px var(--neon-matrix); }
+  50% { border-color: var(--laser-cyan); box-shadow: 0 0 30px var(--cyber-blue), inset 0 0 15px var(--neon-matrix); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+/* Base del Documento */
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--text-phosphor);
+  background-color: var(--blue-black);
+  /* Aplicación del fondo de pantalla procedural */
+  background-image: var(--bg-maximalist);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px, 100% 100%;
+  background-attachment: fixed;
+  padding: 30px 15px;
+  position: relative;
+}
+
+/* Marco decorativo general para toda la pantalla estilo interfaz de ciencia ficción */
+body::before {
+  content: "TECNOLAB // SYSTEM_ACTIVE // 2026";
+  position: fixed;
+  top: 5px; left: 5px; right: 5px; bottom: 5px;
+  border: 2px solid rgba(0, 240, 255, 0.2);
+  pointer-events: none;
+  z-index: 9999;
+  font-size: 0.65rem;
+  color: var(--cyber-blue);
+  padding: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  letter-spacing: 4px;
+}
+
+/* ==========================================================================
+   HERO (Diseño masivo y disruptivo)
+   ========================================================================== */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  /* Fondo de pantalla interno del Hero */
+  background: 
+    repeating-linear-gradient(45deg, rgba(0, 68, 255, 0.15) 0px, rgba(0, 68, 255, 0.15) 2px, transparent 2px, transparent 10px),
+    linear-gradient(180deg, var(--deep-space) 0%, #000 100%);
+  border: 12px double var(--cyber-blue);
+  box-shadow: 30px 30px 0px var(--neon-matrix);
+  margin-bottom: 80px;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+/* Decoración abstracta extra dentro del Hero */
+.hero::after {
+  content: "01010101010101010101010101";
+  position: absolute;
+  font-family: monospace;
+  font-size: 8rem;
+  color: rgba(0, 240, 255, 0.03);
+  top: -20px;
+  left: -20px;
+  word-break: break-all;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+  background: rgba(2, 2, 16, 0.9);
+  padding: 60px;
+  border-radius: 24px;
+  border: 4px solid var(--laser-cyan);
+  box-shadow: inset 0 0 20px var(--neon-matrix);
+  max-width: 900px;
+  transform: rotate(-0.5deg);
+}
+
+.hero h1 {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 0.95;
+  margin-bottom: 25px;
+  animation: glitch 3s infinite;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  margin-bottom: 40px;
+  color: #fff;
+  text-shadow: 1px 1px 10px var(--neon-matrix);
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 22px 60px;
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  background: var(--neon-matrix);
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 4px solid var(--cyber-blue);
+  box-shadow: 8px 8px 0px var(--laser-cyan);
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: all 0.2s steps(4);
+}
+
+.hero-button:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 15px 15px 0px var(--cyber-blue);
+  background: var(--laser-cyan);
+  color: var(--blue-black);
+}
+
+/* ==========================================================================
+   ESTRUCTURAS DE CONTENEDORES (PANELES)
+   ========================================================================== */
+.panel {
+  background: linear-gradient(135deg, rgba(5, 12, 36, 0.95) 0%, rgba(26, 0, 102, 0.8) 100%);
+  margin: 80px 0;
+  padding: 80px 50px;
+  border-radius: 0px 40px 0px 40px; /* Esquinas asimétricas */
+  border: 4px solid var(--neon-matrix);
+  position: relative;
+  animation: pulse-border 4s infinite alternate;
+}
+
+/* Adornos en las esquinas de los paneles */
+.panel::before {
+  content: "◢◤ TECNOFIX ◢◤";
+  position: absolute;
+  top: -18px;
+  left: 30px;
+  background: var(--cyber-blue);
+  color: var(--blue-black);
+  padding: 4px 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.panel h2 {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 2.8rem;
+  color: #fff;
+  margin-bottom: 50px;
+  text-shadow: 4px 4px 0px var(--neon-matrix);
+  background: linear-gradient(90deg, var(--cyber-blue), transparent);
+  padding: 15px;
+  border-left: 10px solid var(--laser-cyan);
+}
+
+/* Grid Quiénes Somos */
+.panel-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+}
+
+.highlight {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #fff;
+  background: repeating-linear-gradient(0deg, rgba(0, 240, 255, 0.05), rgba(0, 240, 255, 0.05) 1px, transparent 1px, transparent 2px);
+  padding: 35px;
+  border: 3px dashed var(--cyber-blue);
+  border-radius: 16px;
+}
+
+/* ==========================================================================
+   TARJETAS DE SERVICIOS (Superposición de Marcos)
+   ========================================================================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.card {
+  padding: 45px 35px;
+  border-radius: 24px;
+  color: #fff;
+  position: relative;
+  background: rgba(2, 2, 16, 0.9);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 10px; left: 10px; right: -10px; bottom: -10px;
+  border-radius: 24px;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.card--primary { 
+  border: 4px solid var(--cyber-blue); 
+  box-shadow: 10px 10px 0px var(--neon-matrix);
+}
+.card--primary::after { background: var(--neon-matrix); }
+
+.card--secondary { 
+  border: 4px solid var(--laser-cyan); 
+  box-shadow: -10px 10px 0px var(--royal-glare);
+}
+.card--secondary::after { background: var(--royal-glare); }
+
+.card--accent { 
+  border: 4px double var(--cyber-blue); 
+  box-shadow: 10px -10px 0px var(--cyber-blue);
+}
+.card--accent::after { background: rgba(0, 240, 255, 0.2); }
+
+.card:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.card h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--cyber-blue);
+  text-transform: uppercase;
+}
+
+.card p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.card ul {
+  list-style: none;
+  margin-top: 25px;
+}
+
+.card li {
+  margin-bottom: 12px;
+  padding-left: 30px;
+  position: relative;
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.card li::before {
+  content: "🖲️";
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+/* ==========================================================================
+   MALLA DE CARACTERÍSTICAS
+   ========================================================================== */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.feature-grid article {
+  background: rgba(0, 68, 255, 0.15);
+  padding: 35px 25px;
+  border: 3px solid var(--neon-matrix);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%); /* Esquina recortada estilo Cyberpunk */
+}
+
+.feature-grid h3 {
+  color: var(--laser-cyan);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+/* ==========================================================================
+   LOGOS COMO STICKERS URBANOS DE ALTO CONTRASTE
+   ========================================================================== */
+.logos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.logos-grid span {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1.5rem;
+  padding: 20px 40px;
+  background: #000;
+  border: 4px solid #fff;
+  color: #fff;
+  font-weight: 900;
+  box-shadow: 8px 8px 0px var(--cyber-blue);
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.logos-grid span:nth-child(1) { transform: rotate(-4deg); background: var(--neon-matrix); }
+.logos-grid span:nth-child(2) { transform: rotate(5deg); border-color: var(--laser-cyan); }
+.logos-grid span:nth-child(3) { transform: rotate(-2deg); background: #fff; color: #000; }
+.logos-grid span:nth-child(4) { transform: rotate(7deg); box-shadow: -8px 8px 0px var(--laser-cyan); }
+.logos-grid span:nth-child(5) { transform: rotate(-6deg); border-style: dotted; }
+.logos-grid span:nth-child(6) { transform: rotate(3deg); background: var(--royal-glare); }
+
+.logos-grid span:hover {
+  transform: scale(1.2) rotate(0deg);
+  box-shadow: 0px 0px 30px var(--cyber-blue);
+  z-index: 10;
+}
+
+.note {
+  text-align: center;
+  color: var(--laser-cyan);
+  background: rgba(0, 255, 204, 0.1);
+  padding: 15px;
+  border: 2px solid var(--laser-cyan);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   SECCIÓN TALLER (Arte Digital Abstracto)
+   ========================================================================== */
+.image-card {
+  position: relative;
+  height: 350px;
+  background: 
+    radial-gradient(var(--cyber-blue) 15%, transparent 16%) 0 0,
+    radial-gradient(var(--cyber-blue) 15%, transparent 16%) 8px 8px,
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    repeating-linear-gradient(90deg, var(--neon-matrix) 0px, var(--neon-matrix) 4px, transparent 4px, transparent 40px);
+  background-size: 16px 16px, 16px 16px, 100% 100%, 100% 100%;
+  border: 6px double #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: float 6s infinite ease-in-out;
+}
+
+.image-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.95;
+}
+
+.image-card .label {
+  position: relative;
+  z-index: 2;
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1.8rem;
+  background: var(--cyber-blue);
+  color: #000;
+  padding: 20px;
+  border: 4px solid #fff;
+  box-shadow: 12px 12px 0px #000;
+  text-align: center;
+}
+
+/* ==========================================================================
+   ACORDEÓN DE PREGUNTAS (FAQ)
+   ========================================================================== */
+.faq-item {
+  background: #000;
+  border-left: 10px solid var(--cyber-blue);
+  border-top: 2px solid var(--neon-matrix);
+  border-right: 2px solid var(--neon-matrix);
+  border-bottom: 2px solid var(--neon-matrix);
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 10px 10px 0px rgba(0, 68, 255, 0.3);
+}
+
+.faq-item h3 {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+
+/* ==========================================================================
+   FOOTER MAXIMALISTA EXTREMO
+   ========================================================================== */
+.footer {
+  background: var(--blue-black);
+  border: 8px solid var(--cyber-blue);
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0px -20px 40px rgba(0, 240, 255, 0.15);
+  border-radius: 40px 40px 0 0;
+}
+
+.footer::before {
+  content: "⚡ CRITICAL REPAIR SYSTEM ⚡";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--laser-cyan);
+  color: #000;
+  padding: 5px 25px;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.login-form,
+.register-form {
+  display: grid;
+  gap: 20px;
+}
+
+.login-form label,
+.register-form label {
+  color: var(--text-phosphor);
+  font-weight: 700;
+}
+
+.login-form input,
+.register-form input {
+  width: 100%;
+  padding: 15px 18px;
+  border: 2px solid rgba(0, 240, 255, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-radius: 16px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.login-form input:focus,
+.register-form input:focus {
+  border-color: var(--laser-cyan);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.25);
+}
+
+.appointment-form select,
+.appointment-form textarea {
+  width: 100%;
+  padding: 15px 18px;
+  border: 2px solid rgba(0, 240, 255, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-radius: 16px;
+  font-size: 1rem;
+  outline: none;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.appointment-form select:focus,
+.appointment-form textarea:focus {
+  border-color: var(--laser-cyan);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.25);
+}
+
+.appointment-form select option {
+  background: var(--blue-black);
+  color: #fff;
+}
+
+.appointment-form textarea {
+  resize: vertical;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.login-form .hero-button,
+.register-form .hero-button {
+  width: 100%;
+  text-align: center;
+}
+
+.login-form a,
+.register-form a {
+  color: var(--laser-cyan);
+}
+
+.footer a {
+  color: var(--laser-cyan);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--cyber-blue);
+  text-shadow: 0 0 10px var(--laser-cyan);
+}
+
+
+.footer p {
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Ajustes de Pantalla */
+@media (max-width: 900px) {
+  .panel-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 2.8rem; }
+  .panel h2 { font-size: 2rem; }
+  body { padding: 10px; }
+}

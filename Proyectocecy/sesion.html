@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión · Tecno High</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Iniciar Sesión</h1>
+      <p>Accede a tu perfil para ver el estado de tus reparaciones y tus solicitudes.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel panel--intro">
+      <div class="panel-grid" style="grid-template-columns: 1fr; gap: 40px; max-width: 550px; margin: 0 auto;">
+        <div>
+          <h2>Bienvenido de nuevo</h2>
+          <p>Ingresa tus datos para continuar con tu cuenta y seguir el progreso de tus servicios.</p>
+        </div>
+        <div>
+          <form action="procesar_sesion.php" method="post" class="login-form">
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Tu correo o nombre" required>
+
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" name="contrasena" placeholder="********" required>
+
+            <button class="hero-button" type="submit" style="margin-top: 20px; width: 100%; border: none; cursor: pointer;">Entrar</button>
+          </form>
+          <p style="margin-top: 20px; text-align: center;"><a href="registro.html" style="color: var(--cyber-blue);">¿No tienes cuenta? Regístrate aquí</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <p>© 2026 Tecno High · Tecnología Elevada.</p>
+    </div>
+    <div>
+      <p>Visítanos: Adolfo Ruiz Cortines 345, Xaltipac, 56346 México, Méx. • WhatsApp: +52 1 55 7379 7766</p>
+    </div>
+    <div>
+      <p><a href="https://www.facebook.com/TechnoHigh11" target="_blank" rel="noopener noreferrer">Facebook: TechnoHigh</a></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reparación de Celulares · Tecno High</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    if (!localStorage.getItem('tecnoHighLoggedIn')) {
+      window.location.replace('sesion.html');
+    }
+  </script>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Tecno High</h1>
+      <p>¿Dispositivos lentos o rotos? En Tecno High, somos expertos en reparación de celulares y computadoras. Reparamos pantallas, baterías, virus y más, con técnicos certificados y precios justos. ¡Dale una segunda vida a tu tecnología</p>
+      <a href="servicios.html" class="hero-button">Ver Servicios</a>
+      <a href="agendar.html" class="hero-button">Agendar Cita</a>
+      <a href="inventario.html" class="hero-button">Ver Inventario</a>
+      <button id="logout-button" class="hero-button" type="button">Cerrar Sesión</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="quienes-somos" class="panel panel--intro">
+      <div class="panel-grid">
+        <div>
+          <h2>¿Quiénes Somos?</h2>
+          <p>Somos Tecno High, el taller de reparación de celulares. Fusionamos tecnología avanzada con diseño funcional para reparar, optimizar y revitalizar tu dispositivo.</p>
+        </div>
+        <div>
+          <p class="highlight">Nuestro enfoque combina diagnóstico especializado, repuestos originales y servicio personalizado, con procesos transparentes y garantía extendida.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="por-que-elegirnos" class="panel panel--features">
+      <h2>Por Qué Elegirnos</h2>
+      <div class="feature-grid">
+        <article>
+          <h3>Atención personalizada</h3>
+          <p>Te explicamos cada paso de la reparación y te ofrecemos opciones transparentes antes de comenzar.</p>
+        </article>
+        <article>
+          <h3>Repuestos premium</h3>
+          <p>Usamos componentes oficiales o equivalentes de alta calidad cuyo rendimiento no compromete tu experiencia.</p>
+        </article>
+        <article>
+          <h3>Entrega rápida</h3>
+          <p>Servicios express disponibles para emergencias, con seguimiento diario del estado de tu equipo.</p>
+        </article>
+        <article>
+          <h3>Garantía extendida</h3>
+          <p>Respaldo entre 30 y 90 días según el tipo de reparación, con revisiones sin costo adicional.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="modelos" class="panel panel--models">
+      <h2>Modelos y Marcas Atendidas</h2>
+      <div class="logos-grid">
+        <span>Apple</span>
+        <span>Samsung</span>
+        <span>Xiaomi</span>
+        <span>Huawei</span>
+        <span>Motorola</span>
+        <span>OPPO</span>
+        <span>Lenovo</span>
+      </div>
+      <p class="note">Incluimos modelos recientes, antiguos y celulares de uso rudo. Si no ves tu marca, consúltanos y te confirmamos la compatibilidad.</p>
+    </section>
+
+    <section id="taller" class="panel panel--about">
+      <div class="panel-grid reverse">
+        <div>
+          <h2>Taller de reparación</h2>
+          <p>Nuestro equipo técnico trabaja con microsoldaduras, estaciones de calor, herramientas de precisión y software de diagnóstico especializado.</p>
+          <ul>
+            <li>Reparación de placas y componentes SMD</li>
+            <li>Reemplazo de cámaras y conectores</li>
+            <li>Servicios de recuperación de información y desbloqueo</li>
+          </ul>
+        </div>
+        <div class="image-card">
+          <img class="image-card__img" src="imagen2.jpg" alt="Laboratorio creativo">
+          <div class="image-card__bg"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proceso" class="panel panel--faq">
+      <h2>Proceso de Reparación</h2>
+      <div class="faq-item">
+        <h3>1. Diagnóstico rápido</h3>
+        <p>Evaluamos tu dispositivo con herramientas especializadas para detectar el problema real y ofrecerte la mejor solución.</p>
+      </div>
+      <div class="faq-item">
+        <h3>2. Presupuesto transparente</h3>
+        <p>Te explicamos cada costo antes de trabajar en tu equipo, sin sorpresas y con opciones adaptadas a tu necesidad.</p>
+      </div>
+      <div class="faq-item">
+        <h3>3. Reparación profesional</h3>
+        <p>Nuestro equipo usa repuestos certificados y técnicas precisas para devolver tu celular funcional y seguro.</p>
+      </div>
+      <div class="faq-item">
+        <h3>4. Entrega con garantía</h3>
+        <p>Entregamos tu equipo con pruebas de funcionamiento y una garantía que respalda la reparación realizada.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <p>© 2026 Tecno High · Tecnología Elevada.</p>
+    </div>
+    <div>
+      <p>Visítanos: Adolfo Ruiz Cortines 345, Xaltipac, 56346 México, Méx. • WhatsApp: +52 1 55 7379 7766</p>
+    </div>
+    <div>
+      <p><a href="https://www.facebook.com/TechnoHigh11" target="_blank" rel="noopener noreferrer">Facebook: TechnoHigh</a></p>
+    </div>
+  </footer>
+  <script>
+    if (!localStorage.getItem('tecnoHighLoggedIn')) {
+      window.location.href = 'sesion.html';
+    }
+    const logoutButton = document.getElementById('logout-button');
+    if (logoutButton) {
+      logoutButton.addEventListener('click', () => {
+        localStorage.removeItem('tecnoHighLoggedIn');
+        window.location.replace('sesion.html');
+      });
+    }  </script>
+</body>
+</html>
